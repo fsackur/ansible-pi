@@ -2,9 +2,18 @@
 - set_fact:
     real_ansible_host: "{{ ansible_host }}"
 
+- name: Run rpi-update
+  shell: sudo rpi-update
+
+- name: Install utils
+  apt:
+    pkg:
+    - telnet
+    - inetutils-tools
+
 # - include: configure_wifi.yml
 # - include: update.yml
 # - include: powershell.yml
 # - include: packages.yml
 # - include: harden.yml
-- include: pihole.yml
+# - include: pihole.yml
