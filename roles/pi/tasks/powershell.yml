@@ -1,0 +1,25 @@
+# arm32 is not packaged
+---
+- name: Update package lists
+  shell: apt-get update
+
+- name: Install libunwind8 and libssl1.0
+  # Regex is used to ensure that we do not install libssl1.0-dev, as it is a variant that is not required
+  shell: apt-get install -y '^libssl1.0.[0-9]$' libunwind8 wget apt-transport-https
+
+- name: Make folder to put powershell
+  file:
+    path: /usr/bin/powershell
+    state: directory
+
+- name: Grab the latest tar.gz
+  shell: wget https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-linux-arm32.tar.gz
+
+- name: Unpack the tar.gz file
+  shell: tar -xvf ./powershell-7.1.0-linux-arm32.tar.gz -C /usr/bin/powershell
+
+- name: Link pwsh on the path
+  file:
+    src: /usr/bin/powershell/pwsh
+    dest: /usr/bin/pwsh
+    state: link

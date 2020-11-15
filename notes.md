@@ -45,3 +45,19 @@ git clone https://github.com/fsackur/ansible-pi
 cd ansible-pi
 ansible-playbook playbook.yml -i hosts
 ```
+
+## After installing powershell
+
+```bash
+sudo nano /etc/passwd
+# set user shell to /usr/bin/powershell/pwsh
+```
+
+## VS Code settings
+
+```json
+// ~/.vscode-server/data/Machine/settings.json
+{
+    "terminal.integrated.shell.linux": "pwsh"
+}
+```

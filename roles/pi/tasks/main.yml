@@ -4,4 +4,4 @@
 
 # - include: configure_wifi.yml
 # - include: update.yml
-- include: installation.yml
+- include: powershell.yml
