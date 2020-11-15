@@ -5,4 +5,5 @@
 # - include: configure_wifi.yml
 # - include: update.yml
 # - include: powershell.yml
-- include: packages.yml
+# - include: packages.yml
+- include: harden.yml

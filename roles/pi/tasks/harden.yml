@@ -1,0 +1,11 @@
+---
+- name: Install packages
+  apt:
+    pkg:
+    - fail2ban
+
+- name: Start service
+  systemd:
+    name: docker.service
+    state: started
+    enabled: yes
