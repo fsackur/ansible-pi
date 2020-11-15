@@ -16,7 +16,7 @@ sudo raspi-config
 
 echo $public_key to ~/.ssh/authorized_keys
 ssh-keygen
-cat ~/.ssh/id_rsa.pun >> ~/.ssh/authorized_keys  # local ssh without agent fwding
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys  # local ssh without agent fwding
 echo "alias ls='ls -Ahl'" >> ~/.profile
 
 
