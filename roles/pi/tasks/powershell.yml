@@ -2,6 +2,8 @@
 ---
 - name: Update package lists
   shell: apt-get update
+  args:
+    warn: no
 
 - name: Install libunwind8 and libssl1.0
   # Regex is used to ensure that we do not install libssl1.0-dev, as it is a variant that is not required
@@ -17,6 +19,11 @@
 
 - name: Unpack the tar.gz file
   shell: tar -xvf ./powershell-7.1.0-linux-arm32.tar.gz -C /usr/bin/powershell
+
+- name: Remove the tar.gz
+  file:
+    path: powershell-7.1.0-linux-arm32.tar.gz
+    state: absent
 
 - name: Link pwsh on the path
   file:
