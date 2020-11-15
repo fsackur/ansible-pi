@@ -3,4 +3,5 @@
     real_ansible_host: "{{ ansible_host }}"
 
 # - include: configure_wifi.yml
-- include: update.yml
+# - include: update.yml
+- include: installation.yml
