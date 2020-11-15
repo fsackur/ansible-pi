@@ -11,6 +11,10 @@
   args:
     warn: no
 
+- name: Install docker python package
+  pip:
+    name: docker
+
 - name: Grant docker permissions
   shell: sudo usermod -aG docker freddie
 
@@ -27,6 +31,19 @@
     name: docker.service
     state: started
     enabled: yes
+
+- name: create common env var file
+  file:
+    path: /etc/environment
+    mode: '0775'
+    owner: pi
+    group: sudo
+
+- name: Use buildkit
+  lineinfile:
+    path: /etc/environment
+    regexp: '^DOCKER_BUILDKIT='
+    line: DOCKER_BUILDKIT=1
 
 # ansible
 # pwsh
