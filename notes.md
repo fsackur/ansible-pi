@@ -36,7 +36,7 @@ sudo apt autoremove
 sudo apt install -y ansible
 
 mkdir git
-git config --global user.email "freddie.sackur@rackspace.co.uk"
+git config --global user.email "github@dustyfox.uk"
 git config --global user.name "Freddie Sackur"
 git config --global core.autocrlf false
 git clone https://github.com/fsackur/ansible-pi
