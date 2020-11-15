@@ -6,4 +6,5 @@
 # - include: update.yml
 # - include: powershell.yml
 # - include: packages.yml
-- include: harden.yml
+# - include: harden.yml
+- include: pihole.yml

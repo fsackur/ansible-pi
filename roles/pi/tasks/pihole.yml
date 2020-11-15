@@ -1,0 +1,12 @@
+---
+- name: Pull image
+  docker_image:
+    name: pihole/pihole
+
+- name: Pull run script
+  get_url:
+    url: https://raw.githubusercontent.com/pi-hole/docker-pi-hole/master/docker_run.sh
+    dest: /usr/bin/run_pihole
+    mode: '0775'
+    owner: pi
+    group: docker
